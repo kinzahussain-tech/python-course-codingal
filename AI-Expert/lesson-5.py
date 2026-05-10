@@ -15,22 +15,18 @@ model = models.Sequential([
     layers.Dense(10, activation='softmax')
 ])
 
-# Compile the model
 model.compile(optimizer='adam',
     loss='sparse_categorical_crossentropy',
     metrics=['accuracy'])
 
-# Train the model
 model.fit(x_train, y_train, epochs=5)
 
-# Evaluate the model
 test_loss, test_acc = model.evaluate(x_test, y_test)
 print(f"Test accuracy: {test_acc}")
 
-# Make predictions
 predictions = model.predict(x_test)
 
-# Display the first image and prediction
+
 plt.imshow(x_test[20], cmap=plt.cm.binary)
 plt.title(f"Predicted: {predictions[20].argmax()}")
 plt.show()
