@@ -6,7 +6,7 @@ init(autoreset=True)
 
 try: df = pd.read_csv(r"D:\python course-codingal\AI-Expert\top_movies.csv")
 except FileNotFoundError:
-    print(Fore.RED + "Error: The file 'imdb_top_1000.csv' was not found."); raise SystemExit
+    print(Fore.RED + "Error: The file 'top_movies.csv' was not found."); raise SystemExit
 
 genres = sorted({g.strip() for xs in df["Genre"].dropna().str.split(", ") for g in xs})
 
